@@ -1,0 +1,9 @@
+<div data-component="my-profile-page" [class.menu-opened-page-inverted]="toggle">
+  <app-top-bar (onOpenMenu)="openEvent($event)"></app-top-bar>
+  <app-my-profile></app-my-profile>
+  <div class="bg-cards">
+    <img src="./../../assets/img/profile/cards-bg.png" alt="">
+  </div>
+</div>
+
+<router-outlet></router-outlet>

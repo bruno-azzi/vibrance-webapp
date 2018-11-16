@@ -1,0 +1,38 @@
+@import './../../../styles.scss';
+
+[data-component='tab-list'] {
+    background: $blue;
+    padding-bottom: 10px;
+    .list {
+        text-align: center;
+        .list-item {
+            display: inline-block;
+            text-transform: uppercase;
+            position: relative;
+            margin: 0 10px;
+            .link {
+                display: block;
+                color: $white;
+                font-size: 13px;
+                padding: 0 10px 8px 10px;
+                letter-spacing: 1px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background: $pink;
+                    transition: 400ms ease;
+                }   
+                &.active {
+                    &:before {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

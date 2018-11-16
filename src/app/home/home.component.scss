@@ -1,0 +1,8 @@
+@import './../../styles.scss';
+
+[data-component='home'] {
+    transition: all 500ms ease;
+    display: block;
+    position: relative;
+    left: 0;
+}

@@ -1,0 +1,97 @@
+@import './../../../styles.scss';
+
+[data-component='my-profile'] {
+	display: block;
+	position: relative;
+
+	.img-holder {
+		width: 175px;
+		height: 175px;
+		margin: 0 auto;
+		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+		padding: 10px;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url('./../../../assets/img/profile/rounded-border.png') no-repeat;
+			background-size: cover;
+			height: 175px;
+			width: 175px;
+			animation: spin 10s infinite linear;
+		}
+		.img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+	}
+	.text-holder {
+		text-align: center;
+		.name {
+			font-size: 36px;
+			font-weight: 200;
+			margin-bottom: -5px;
+		}
+		.location {
+			font-size: 14px;
+			font-weight: 300;
+			color: $light-blue;
+			margin-bottom: 30px;
+		}
+	}
+	.btn-holder {
+		text-align: center;
+		.btn {
+			background: none;
+			border: 0;
+			vertical-align: middle;
+			img {
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+				display: inline-block;
+				margin-right: 10px;
+			}
+			.reaction-counter {
+				vertical-align: middle;
+				display: inline-block;
+				color: #fff;
+				font-size: 15px;
+				line-height: 25px;
+			}
+			&.follow {
+				color: $green;
+				border: 1px solid $green;
+				padding: 13px 38px;
+				border-radius: 25px;
+				font-size: 17px;
+				font-weight: 200;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 17px;
+				margin: 0 7%;
+				.icon {
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					margin: 0 0 0 10px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+}

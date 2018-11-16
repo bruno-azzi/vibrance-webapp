@@ -1,0 +1,5 @@
+<div data-component="home" [class.menu-opened-page]="toggle">
+    <app-header (onOpenMenu)="openEvent($event)"></app-header>
+    <app-tabs></app-tabs>
+    <router-outlet></router-outlet>
+</div>

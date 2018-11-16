@@ -1,0 +1,61 @@
+@import './../../../styles.scss';
+
+[data-component='header'] {
+    background: $blue;
+    .nav-bar {
+        padding: 15px;
+        .nav-bar-partitions {
+            width: 25%;
+            display: inline-block;
+            &.middle {
+                width: 50%;
+                text-align: center;
+            }
+            .section-title {
+                font-size: 20px;
+                color: $white;
+                font-weight: 300;
+            }
+            .notifications-holder {
+                text-align: right;
+            }
+            .icon-button {
+                background: none;
+                border: 0;
+                outline: none;
+                padding: 0;
+                text-align: right;
+                position: relative;
+                &.notification {
+                    &:after {
+                        content: '8';
+                        width: 15px;
+                        height: 15px;
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        background: $pink;
+                        border-radius: 50%;
+                        color: $white;
+                        font-size: 10px;
+                        text-align: center;
+                    }
+                }
+                .navbar-icon {
+                    width: 22px;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+}

@@ -1,0 +1,91 @@
+@import './../../../styles.scss';
+
+[data-component='profile'] {
+    position: relative;
+    padding: 15px;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: #f5f5f5;
+        width: 90%;
+        height: 2px;
+    }
+    .profile-link {
+        display: block;
+        .img-holder {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            margin-right: 25px;
+            position: relative;
+            vertical-align: middle;
+            .img {
+                width: 100%;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -10px;
+                border: 3px solid lightgrey;
+                border-radius: 50%;
+                width: 11px;
+                height: 11px;
+            }
+            &.online {
+                &:after {
+                    border-color: lightgreen;
+                }
+            }
+            &.away {
+                &:after {
+                    border-color: orange;
+                }
+            }
+            &.busy {
+                &:after {
+                    border-color: red;
+                }
+            }
+        }
+        .text-holder {
+            width: calc(100% - 80px);
+            display: inline-block;
+            vertical-align: middle;
+            .name {
+                line-height: 1.2;
+                font-weight: 300;
+                font-size: 19px;
+                color: $grey;
+                margin-bottom: 5px;
+            }
+            .location {
+                line-height: 1.2;
+                font-size: 12px;
+                color: $grey;
+                font-weight: 300;
+                position: relative;
+                padding-left: 16px;
+                &:before {
+                    content: '';
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    position: absolute;
+                    background: url('./../../../assets/img/profile/profile.png') no-repeat;
+                    background-size: contain;
+                    width: 10px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+}

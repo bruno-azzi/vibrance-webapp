@@ -1,0 +1,79 @@
+@import './../../../styles.scss';
+
+[data-component='top-bar'] {
+  background: transparent;
+  margin-bottom: 10px;
+  .nav-bar {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav-bar-partitions {
+      width: 25%;
+      display: inline-block;
+
+      &.middle {
+        width: 50%;
+				text-align: center;
+				.section-title {
+				  font-size: 15px;
+				  color: $white;
+					font-weight: 300;
+					.highlight {
+						color: $blue;
+						font-size: 15px;
+					}
+				}
+      }
+
+			.btn {
+				background: none;
+				border: 0;
+				outline: none;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				&.back {
+					background: url('./../../../assets/img/register/arrow-white.png') no-repeat;
+					background-size: contain;
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+      .menu-holder {
+				text-align: right;
+      }
+
+      .icon-button {
+        background: none;
+        border: 0;
+        outline: none;
+        padding: 0;
+        text-align: right;
+        position: relative;
+
+        &.notification {
+          &:after {
+            content: '8';
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: $pink;
+            border-radius: 50%;
+            color: $white;
+            font-size: 10px;
+            text-align: center;
+          }
+        }
+
+        .navbar-icon {
+          width: 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

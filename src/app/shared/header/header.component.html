@@ -1,0 +1,62 @@
+<header data-component="header">
+  
+  <div class="container">
+    <div class="nav-bar">
+      <div class="nav-bar-partitions">
+        <div class="menu-holder">
+          <button class="icon-button" (click)="openMenu(toggle)">
+            <img class="navbar-icon" src="./../../../assets/img/header/menu-icon.png" alt="Menu" title="Menu">
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-bar-partitions middle">
+        <a class="section-title" routerLink="./latest">
+          {{ sectionTitle }}
+        </a>
+      </div>
+
+      <div class="nav-bar-partitions">
+        <div class="notifications-holder">
+          <button class="icon-button notification">
+            <img class="navbar-icon" src="./../../../assets/img/header/world.gif" alt="Notifications icon" title="Notifications">
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="menu-mobile" [class.menu-opened]="toggle">
+
+    <div class="search-holder">
+      <input type="text" class="search" placeholder="Search">
+      <div class="settings">
+        <button class="settings-icon"></button>
+      </div>
+    </div>
+
+    <a class="profile-holder" routerLink="/my-profile" *ngFor="let profile of profiles">
+      <div class="img-holder">
+        <img src="{{ profile.img }}" alt="{{ profile.name }} profile picture" title="{{ profile.name }}" class="picture">
+        <span class="status-label"></span>
+      </div>
+      <div class="text-holder">
+        <h4 class="name">{{ profile.name }}</h4>
+        <p class="profession">{{ profile.profession }}</p>
+      </div>
+    </a>
+
+    <nav class="navigation">
+      <ul class="list">
+        <a class="link" routerLink="{{ item.link }}" *ngFor="let item of itemList">
+          <li class="list-item {{ item.section }}">
+            {{ item.title }}
+            <span class="notification-counter">{{ item.counter }}</span>
+          </li>
+        </a>
+      </ul>
+    </nav>
+
+  </div>
+</header>

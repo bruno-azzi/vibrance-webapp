@@ -1,0 +1,244 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bulma/css/bulma.css';
+
+$white: #fff;
+$black: #000;
+$blue: #7892e3;
+$light-blue: #5c8bde;
+$pink: #f73267;
+$grey: #3c4f5e;
+$green: #45db5e;
+$yellow: yellow;
+$font1: 'Source Sans Pro', sans-serif;   // font-weight -> 200 = extraLight // 300 = light // 400 = regular //
+$font2: 'Montserrat', sans-serif;       // font-weight -> 200 = extraLight // 300 = light // 400 = regular //
+
+body,
+html,
+* {
+    font-family: $font1;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    outline: none;
+}
+body,
+html,
+main,
+[data-component='app'],
+[data-component='login'] {
+    height: 100%;
+    position: relative;
+}
+
+.menu-opened-page {
+  left: 85% !important;
+}
+.menu-opened-page-inverted {
+  left: -85% !important;
+}
+.menu-mobile {
+    position: fixed;
+    left: -85%;
+    top: 0;
+    background: url('/assets/img/profile/profile-bg.png');
+    background-size: cover;
+    height: 100%;
+    width: 85%;
+    overflow: auto;
+    padding: 15px 20px;
+    transition: 500ms ease;
+    font-size: 0;
+    z-index: 5;
+    &.inverted {
+        right: -85%;
+        left: auto;
+    }
+    &.menu-opened {
+        left: 0;
+    }
+    &.menu-opened-inverted {
+      right: 0%;
+    }
+    
+    .search-holder {
+        margin-bottom: 25px;
+        .search {
+            background: #1d1f32;
+            border: 0;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: 300;
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - 45px);
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+        .settings {
+            font-size: 0;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 20px;
+            position: relative;
+            .settings-icon {
+                background: url('/assets/img/profile/gear-icon.png') no-repeat;
+                background-size: contain;
+                border: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .profile-holder {
+        display: block;
+        .img-holder {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 50%;
+            padding: 10px;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('/assets/img/profile/rounded-border.png') no-repeat;
+                background-size: cover;
+                height: 160px;
+                width: 160px;
+                animation: spin 10s infinite linear;
+            }
+            .status-label {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                width: 25px;
+                height: 25px;
+                background: url('/assets/img/profile/status-label.png') no-repeat;
+                background-size: contain;
+            }
+            .picture {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover; 
+            }
+        }
+        .text-holder {
+            margin-bottom: 40px;
+            text-align: center;
+            .name {
+                font-size: 26px;
+                font-weight: 300;
+                background: linear-gradient(to right, #67cbff, #9999ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .profession {
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 14px;
+                font-weight: 200;
+            }
+        }
+    }
+
+    .navigation {
+        .list {
+            .link {
+                display: block;
+                &:last-child {
+                    .list-item {
+                        margin-bottom: 0;
+                    }
+                }
+                .list-item {
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                    margin-bottom: 35px;
+                    width: 100%;
+                    font-weight: 300;
+                    position: relative;
+                    padding-left: 45px;
+                    line-height: 30px;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 25px;
+                        height: 25px;
+                        background: url('/assets/img/profile/globe.png') no-repeat;
+                        background-size: contain;
+                    }
+                    .notification-counter {
+                        border: 2px solid $white;
+                        color: $white;
+                        border-radius: 20px;
+                        min-width: 30px;
+                        height: 30px;
+                        padding: 0 9px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateY(-50%);
+                        font-weight: bold;
+                        opacity: 0.8;
+                    }
+                    &.trending {
+                        &:before {
+                            background: url('/assets/img/profile/trending.png') no-repeat;
+                            background-size: contain;
+                        }
+                        .notification-counter {
+                            border-color: $pink;
+                            color: $pink;
+                        }
+                    }
+                    &.places {
+                        &:before {
+                            background: url('/assets/img/profile/places.png') no-repeat;
+                            background-size: contain;
+                        }
+                        .notification-counter {
+                            border-color: $yellow;
+                            color: $yellow;
+                        }
+                    }
+                    &.people {
+                        &:before {
+                            background: url('/assets/img/profile/people.png') no-repeat;
+                            background-size: contain;
+                        }
+                        .notification-counter {
+                            border-color: $green;
+                            color: $green;
+                        }
+                    }
+                    &.notifications {
+                        &:before {
+                            background: url('/assets/img/profile/notifications.png') no-repeat;
+                            background-size: contain;
+                        }
+                        .notification-counter {
+                            border-color: $blue;
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

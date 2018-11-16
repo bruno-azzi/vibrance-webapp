@@ -1,0 +1,21 @@
+@import './../../styles.scss';
+
+[data-component='my-profile-page'] {
+  display: block;
+  background: url('./../../assets/img/profile/profile-bg.png') no-repeat;
+  color: #fff;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  transition: 500ms ease;
+  left: 0;
+  .bg-cards {
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -140px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<section data-component="tab-list">
+  <div class="container">
+    <ul class="list">
+      <li class="list-item" *ngFor="let tab of tabList"> 
+        <a class="link" routerLink="{{ tab.link }}" routerLinkActive="active"> 
+          {{ tab.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<div data-component="profile">
+  <a class="profile-link" href="{{ profile.link }}">
+    <div class="img-holder {{ profile.status }}" [ngStyle]="{'background-image': 'url(' + profile.picture + ')'}"></div>
+      <div class="text-holder">
+        <h2 class="name">{{ profile.name }}</h2>
+        <p class="location">{{ profile.location }}</p>
+      </div>
+  </a>
+</div>
