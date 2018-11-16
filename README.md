@@ -1,2 +1,3 @@
-# vibrance-webapp
-Angular Web App feito para estudo
+# Vibrance Web App
+
+Um Angular Web App feito para estudo
