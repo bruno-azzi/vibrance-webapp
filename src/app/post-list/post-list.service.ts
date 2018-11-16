@@ -12,7 +12,7 @@ export class PostListService {
 
   getPostList(): Observable<Post[]> {
 
-    return this.http.get(environment.apiUrl + '5bec495c330000543afbc383').pipe(map((data: any) => {
+    return this.http.get(environment.apiUrl + '5bef245b2e00005742eeebc2').pipe(map((data: any) => {
 
       return data.map((postItem) => {
         const post = new Post();
@@ -30,6 +30,21 @@ export class PostListService {
 
       });
 
+    }));
+  }
+
+  getUser(): Observable<Post> {
+
+    return this.http.get(environment.apiUrl + '5bef245b2e00005742eeebc2').pipe(map((data: any) => {
+
+      const post = new Post();
+      post.img = data[0].img;
+      post.link = data[0].link;
+      post.name = data[0].name;
+      post.user = data[0].user;
+      post.profession = data[0].profession;
+
+      return post;
     }));
   }
 

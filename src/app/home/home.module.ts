@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { FavoritesProfilesModule } from './../favorites-profiles/favorites-profiles.module';
 import { PostListModule } from './../post-list/post-list.module';
 import { SharedModule } from '../shared/shared.module';
+import { HomeRoutingModule } from './home.routing.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
     PostListModule,
     FavoritesProfilesModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    HomeRoutingModule
   ],
   declarations: [HomeComponent]
 })

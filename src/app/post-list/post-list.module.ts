@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { SharedModule } from './../shared/shared.module';
-import { PostListService } from './post-list.service';
+//import { PostListService } from './post-list.service';
 import { PostListComponent } from './post-list.component';
 import { PostComponent } from './post/post.component';
 
@@ -15,9 +15,9 @@ import { PostComponent } from './post/post.component';
     HttpClientModule,
     RouterModule,
   ],
-  providers: [
+ /*  providers: [
     PostListService
-  ],
+  ], */
   exports: [
     PostListComponent,
     PostComponent

@@ -14,13 +14,13 @@
     </div>
   </div>
 
-  <form class="form">
-    <input class="input-name" type="text" placeholder="First Name">
-    <input class="input-name" type="text" placeholder="Last Name">
-    <input class="input-full" type="email" placeholder="Email Address">
-    <input class="input-full" type="password" placeholder="Choose a Password">
-    <input class="input-number" type="number" placeholder="+1">
-    <input class="input-number" type="number" placeholder="Phone Number">
+  <form class="form" (ngSubmit)="register()">
+    <input class="input-name" type="text" placeholder="First Name" autocomplete="firstName">
+    <input class="input-name" type="text" placeholder="Last Name" autocomplete="lastName">
+    <input class="input-full" type="email" placeholder="Email Address" autocomplete="email">
+    <input class="input-full" type="password" placeholder="Choose a Password" autocomplete="password">
+    <input class="input-number" type="number" placeholder="+1" autocomplete="ddd">
+    <input class="input-number" type="number" placeholder="Phone Number" autocomplete="number">
     <div class="btn-holder">
       <button class="btn-submit" type="submit" routerLink="/my-profile">
         <span class="text">Get Started</span>

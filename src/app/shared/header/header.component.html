@@ -36,14 +36,14 @@
       </div>
     </div>
 
-    <a class="profile-holder" routerLink="/my-profile" *ngFor="let profile of profiles">
+    <a class="profile-holder" routerLink="/my-profile" *ngIf="user">
       <div class="img-holder">
-        <img src="{{ profile.img }}" alt="{{ profile.name }} profile picture" title="{{ profile.name }}" class="picture">
+        <img src="{{ user.img }}" alt="{{ user.name }} profile picture" title="{{ user.name }}" class="picture">
         <span class="status-label"></span>
       </div>
       <div class="text-holder">
-        <h4 class="name">{{ profile.name }}</h4>
-        <p class="profession">{{ profile.profession }}</p>
+        <h4 class="name">{{ user.name }}</h4>
+        <p class="profession">{{ user.profession }}</p>
       </div>
     </a>
 

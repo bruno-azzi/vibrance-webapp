@@ -1,4 +1,5 @@
 <div data-component="login" [ngClass]="{'': !showButtons, 'show-buttons': showButtons, 'show-form': form}">
+
   <div class="background"></div>
   <img class="logo" src="./../../assets/img/pre-login/logo.png" alt="Vibrance Logo" title="Vibrance">
   <img class="phone" src="./../../assets/img/pre-login/phone.png" alt="Phone Image" Title="Vibrance">
@@ -19,17 +20,18 @@
       <a class="option-btn" routerLink="/register">Register</a>
     </div>
 
-    <form class="form-block">
-      <input class="field" [(ngModel)]="usuario.email" name="email" type="email" id="email" placeholder="E-mail">
-      <input class="field" [(ngModel)]="usuario.password" name="password" type="password" id="password" placeholder="Password">
+    <form class="form-block" (ngSubmit)="doLogin()">
+      <input class="field" [(ngModel)]="user.email" autocomplete="email" name="email" type="email" id="email" placeholder="E-mail">
+      <input class="field" [(ngModel)]="user.password" autocomplete="password" name="password" type="password" id="password" placeholder="Password">
       <button type="button" class="back" (click)="back()">
         <img src="./../../assets/img/register/arrow-white.png" alt="arrow-white" title="Back">
       </button>
-      <button class="btn" type="submit" (click)="fazerLogin()">Login</button>
+      <button class="btn" type="submit">Login</button>
       <a class="forgot" routerLink="/forgot-password">Forgot password</a>
     </form>
 
   </div>
+
 </div>
 
 <router-outlet></router-outlet>

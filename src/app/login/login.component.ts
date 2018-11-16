@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { Usuario } from '../model/usuario';
+import { User } from '../model/user';
 import { LoginService } from './login.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   showButtons: boolean = false;
   form: boolean = false;
-  usuario: Usuario = new Usuario();
+
+  user: User = new User();
   
   constructor(private loginService: LoginService) { }
   
@@ -24,8 +25,8 @@ export class LoginComponent implements OnInit {
     //console.log(this.randomText)
   }
 
-  fazerLogin() {
-    this.loginService.fazerLogin(this.usuario);
+  doLogin() {
+    this.loginService.doLogin(this.user);
   }
 
   valueChanged(e) {

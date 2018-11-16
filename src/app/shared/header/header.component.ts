@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter, Input } from '@angular/core';
+
+import { Post } from './../../model/post';
+import { PostListService } from 'src/app/post-list/post-list.service';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +12,17 @@ import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@ang
 export class HeaderComponent implements OnInit {
   sectionTitle = 'Home';
 
-  profiles: any[] = [
-    {
-      'img': './../../../assets/img/profile/profile-picture-2.png',
-      'name': 'Twanda Keaton',
-      'profession': 'Product Designer'
-    }
-  ]
+  @Input() post: Post;
+  postList: Post[];
+  user: Post;
+
+  // profiles: any[] = [
+  //   {
+  //     'img': './../../../assets/img/profile/profile-picture-2.png',
+  //     'name': 'Twanda Keaton',
+  //     'profession': 'Product Designer'
+  //   }
+  // ]
 
   itemList: any[] = [
     {
@@ -57,10 +64,18 @@ export class HeaderComponent implements OnInit {
     this.onOpenMenu.emit(this.toggle);
   }
 
-  constructor() { }
+  constructor(private service: PostListService) { }
 
   ngOnInit() {
+    this.service.getUser().subscribe((data: Post) => {
+      this.user = data;
+       console.log(data)
+       
+     }, error => {
+       console.log(error);
+     })
   }
+
 
 
 }

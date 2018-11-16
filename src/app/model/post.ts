@@ -5,6 +5,7 @@ export class Post {
     name: string;
     user: string;
     time: string;
+    profession: string;
     heartCounter: number;
     commentCounter: number;
     contentImg: string;
